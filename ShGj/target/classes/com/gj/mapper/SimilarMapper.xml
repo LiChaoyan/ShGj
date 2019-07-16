@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gj.mapper.SimilarMapper">
+     <select id="getXHbyxh" resultType="com.gj.pojo.XSimilar">
+	 SELECT XH,XB,BJ
+     from mac_2017
+     where XH='${xh}'
+     </select>
+</mapper>
+

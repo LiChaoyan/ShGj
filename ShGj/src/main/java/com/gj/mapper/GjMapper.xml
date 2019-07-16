@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gj.mapper.GjMapper">
+     <select id="getListBybid_start" resultType="com.gj.pojo.Gj">
+	 SELECT bid_start,bid_end,bname_start,bname_end,count
+     from gj_words_count
+     where bid_start='${bid_start}'
+     </select>
+</mapper>
+

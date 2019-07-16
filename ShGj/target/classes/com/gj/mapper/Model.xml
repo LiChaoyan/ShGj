@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gj.mapper.ModelMapper">
+	<select id="getlv_szl" resultType="Double">
+	SELECT 
+    (SELECT count(DISTINCT XH)
+    from location_4
+		WHERE bname LIKE '%公寓%' and hour=22 or hour=23 or hour=21)/
+    (SELECT count(DISTINCT XH)
+    from location_4
+		WHERE  hour=22 or hour=23 or hour=21) as count;
+	</select>
+	<select id="TulistBydata" resultType="com.gj.pojo.Model">
+		SELECT uid,longitude,latitude
+		from data_${data}
+		GROUP BY uid
+	</select>
+</mapper>
+

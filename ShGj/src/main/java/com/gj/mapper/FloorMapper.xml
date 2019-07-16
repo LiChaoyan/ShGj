@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gj.mapper.FloorMapper">
+     <select id="getfloorCount" resultType="com.gj.pojo.Floor">
+	 SELECT bname,fid,count
+     from floor_count;
+     </select>
+     <select id="getfloorCountBybname" resultType="com.gj.pojo.Floor">
+	 SELECT bname,fid,count
+     from floor_count
+     where bname='${bname}';
+     </select>
+     <select id="getBidCount" resultType="java.lang.Integer">
+	 SELECT count(distinct bname)  as num
+     from floor_count
+     </select>
+     <select id="getFidCount" resultType="java.lang.Integer">
+	 SELECT count(distinct fid) 
+     from floor_count
+     </select>
+     <select id="getBnameList" resultType="com.gj.pojo.Floor">
+	 SELECT distinct bname
+     from floor_count
+     </select>
+</mapper>
+
